@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breville/Sage Oracle: vapor y códigos ER, qué revisar primero</title>
+<meta name="description" content="Vapor en la Oracle de Breville/Sage — qué significan sus códigos, la purga que conviene intentar primero y cuándo la cal es la culpable.">
+<link rel="canonical" href="https://es.codefixcoffee.com/blog/breville-oracle-steam-guide/">
+<link rel="alternate" hreflang="en" href="https://blog.codefixcoffee.com/post/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="fr" href="https://fr.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="de" href="https://de.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="es" href="https://es.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="it" href="https://it.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="pl" href="https://pl.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="nl" href="https://nl.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="pt" href="https://pt.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="hu" href="https://hu.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="cs" href="https://cs.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="ro" href="https://ro.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="sv" href="https://sv.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+  <link rel="alternate" hreflang="tr" href="https://tr.codefixcoffee.com/blog/breville-oracle-steam-guide/" />
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="alternate" type="application/rss+xml" title="CodeFix Blog" href="/blog/rss.xml">
+<meta name="google-adsense-account" content="ca-pub-9660119725457689"><script>(function(){var u="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660119725457689";var d=false;function l(){if(d)return;d=true;var s=document.createElement("script");s.async=true;s.crossOrigin="anonymous";s.src=u;document.head.appendChild(s)}["scroll","pointerdown","keydown","touchstart"].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});addEventListener("load",function(){setTimeout(l,3500)})})();</script></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/blog/">☕ CodeFix Blog</a><span><a href="/">Volver al sitio</a></span></div></header>
+<main>
+<h1>Breville/Sage Oracle: vapor y códigos ER, qué revisar primero</h1>
+<p class="meta">2026-10-22</p>
+<p>El circuito de vapor es la zona más castigada de una Breville Oracle: caldera de vapor de acero inoxidable, lanza de auto-texturizado, sondas de nivel y bomba de llenado, todo a temperatura a diario. También genera una parte enorme de los códigos de error de la máquina. La familia Oracle usa una tabla de servicio de 32 entradas que Breville no publica, y en el Reino Unido el mismo hardware luce la insignia <strong>Sage</strong>, con códigos idénticos. Antes de dar por muerta una pieza, haz las comprobaciones baratas: la mayoría de las paradas del lado del vapor son una boquilla obstruida, una purga que no se hizo o cal en una sonda.</p>
+<h2>Dónde están los códigos de vapor en la tabla Oracle</h2>
+<p>La Oracle (BES980) y la Oracle Touch (BES990) comparten tabla; la BES980 enseña las entradas como "Error 1" a "Error 32" y la BES990 las antepone con ER. Las entradas relacionadas con el vapor se concentran en cinco puntos:</p>
+<ul>
+<li><strong>Error 1 a 4</strong> — el sensor de temperatura de la caldera de vapor, rotando entre circuito abierto en el arranque, señal perdida en operación y cortocircuito en ambas situaciones. Una sonda, cuatro formas de avisar.</li>
+<li><strong>Error 13 a 16</strong> — el mismo cuarteto para el sensor de temperatura de la propia lanza de vapor, la sonda que corta el auto-texturizado al alcanzar la temperatura correcta de la leche. Vive en el punto más húmedo de la máquina.</li>
+<li><strong>Error 18</strong> — la caldera de vapor no calienta con normalidad.</li>
+<li><strong>Error 20 y 21</strong> — nivel de agua de la caldera de vapor o problemas de la bomba de llenado, y una lectura de sonda de nivel que no cuadra con lo que la placa espera.</li>
+<li><strong>Error 26</strong> — la caldera de vapor sobrecalentó por encima del objetivo; el <strong>Error 32</strong> es una fuga de la caldera de vapor o un fallo de relleno.</li>
+</ul>
+<p>No todo lo que rodea la lanza pertenece al circuito de vapor: los códigos 5 a 8 son del sensor de la caldera de café, con el <a href="https://es.codefixcoffee.com/breville/oracle-bes980/error-8/">Error 8</a> como entrada de cortocircuito en operación. Leer el registro almacenado ayuda a separar las familias — en la BES980, mantén 1 CUP, 2 CUP y POWER a la vez con la máquina apagada para abrir Error Storage y recorrer los 32 códigos con sus contadores.</p>
+<h2>Qué revisar primero: la rutina de purga</h2>
+<p>Un vapor flojo o que escupe, o un código justo después de una bebida con leche, suelen apuntar a la boquilla y no a la caldera:</p>
+<ol>
+<li>Desenchufa la máquina y deja que la lanza se enfríe.</li>
+<li>Desenrosca la boquilla y déjala en remojo en agua caliente con un poco de descalcificador; limpia cada orificio con la aguja de la herramienta de limpieza.</li>
+<li>Ejecuta la purga — unos diez segundos de vapor a la bandeja de goteo con la boquilla retirada, y luego otros tantos con ella puesta.</li>
+<li>Purga la lanza después de cada sesión de leche desde ahora; la leche seca en la boquilla es el origen de la mayoría de estas paradas.</li>
+</ol>
+<p>Si la máquina vigila la presión de vapor, como hace la Oracle Jet con su código E16, una boquilla incrustada puede disparar un código antes de que notes que el vapor perdió fuerza.</p>
+<h2>Dureza, cal y las sondas de nivel</h2>
+<p>Donde el agua es dura, la cal escribe sus propios códigos. Las sondas de nivel de la caldera de vapor viven permanentemente en agua caliente, y una costra calcárea las aísla de modo que la placa lee "sin agua" aunque la caldera esté llena — esa es la ruta clásica al Error 20 o 21, y al fallo de relleno del Error 32. La cal también se acumula en el camino de la lanza y en la entrada de la bomba de llenado. Un desescalado completo, incluyendo el ciclo de la caldera de vapor, es el diagnóstico más barato que puedes ejecutar y borra por sí solo un número sorprendente de estos códigos.</p>
+<p>La hermana de la gama lo confirma: la Dual Boiler guarda sus códigos 00 a 12 en un menú de autocomprobación, y el <a href="https://es.codefixcoffee.com/breville/dual-boiler-bes920/00/">código 00</a> — sensor de la caldera de vapor no detectado — encabeza una tabla cuyas entradas de nivel y llenado se comportan exactamente igual bajo agua dura.</p>
+<h3>Dureza del agua en España y Latinoamérica</h3>
+<p>En buena parte de España (litoral mediterráneo, sur y amplias zonas del interior) el agua de red supera con holgura los 10 ºdH de dureza, igual que en el norte de México: ahí conviene acortar el intervalo de desescalado que marca la propia máquina y valorar agua embotellada de mineralización débil para el depósito. El filtro de agua original reduce la formación de cal pero no elimina los ciclos de desescalado, solo los espacia. Para descalcificante y accesorios oficiales, <a href="https://www.sageappliances.co.uk">la web de Sage Appliances</a> es la referencia para los modelos europeos.</p>
+<h2>Cuándo desescalar y cuándo desmontar</h2>
+<p>Primero desescalar, después desmontar — pero conviene saber dónde deja de ayudar el desescalado:</p>
+<ul>
+<li><strong>Desescala primero</strong> ante códigos de nivel, sonda y relleno (20, 21, 32), vapor flojo sin código y cualquier máquina con más de tres meses desde el último ciclo. Coste: un bote de descalcificador.</li>
+<li><strong>El desescalado no arregla</strong> un código de sensor que reaparece al instante en una máquina recién desescalada y caliente — sea una entrada de caldera de vapor del 1 al 4 o el <a href="https://es.codefixcoffee.com/breville/oracle-bes980/error-8/">Error 8</a> del lado del café. Un código que sobrevive al desescalado apunta a la sonda, su cable o un conector.</li>
+<li><strong>Para y revisa las juntas</strong> si el Error 26 se repite: una junta tórica de la sonda de vapor con fuga deja que el vapor caliente el cable del sensor e imita una caldera desbocada. Unas juntas nuevas son baratas; una placa con un triac que no corta la resistencia calefactora, no.</li>
+<li><strong>Error 18</strong> en una máquina que ya no calienta vapor en absoluto suele estar en la resistencia — fusible térmico, resistencia calefactora o placa — y no en la cal, así que trátalo como reparación y no como limpieza.</li>
+</ul>
+<h2>Cuánto cuestan las piezas</h2>
+<p>Los conjuntos originales de sensor de temperatura van de unos 25 a 95 € según la sonda; los conjuntos de lanza de vapor, que incluyen su sensor, rondan los 60 a 95 €; un kit de sonda y juntas cuesta unos 85 € y una bomba de llenado de 30 a 60 €. Frente a eso, los presupuestos oficiales fuera de garantía por fallos internos suelen andar entre 300 y 500 €, de modo que un bote de descalcificador primero y una reparación a nivel de sensor después es casi siempre la mejor aritmética. Los lectores del Reino Unido encontrarán la cobertura con marca Sage de estas mismas tablas en la <a href="https://es.codefixcoffee.com/uk/">edición británica del sitio</a>.</p>
+</main>
+<footer>Guías de reparación y explicaciones de códigos de error de codefixcoffee.com.</footer>
+</body></html>
