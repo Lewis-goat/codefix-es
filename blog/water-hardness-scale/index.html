@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La dureza del agua y tu máquina de café</title>
+<meta name="description" content="La dureza del agua decide cada cuánto pide desescalado la máquina; si la configuras mal, la cal se acumula en silencio hasta convertirse en averías.">
+<link rel="canonical" href="https://es.codefixcoffee.com/blog/water-hardness-scale/">
+<link rel="alternate" hreflang="en" href="https://blog.codefixcoffee.com/post/water-hardness-scale/" />
+  <link rel="alternate" hreflang="fr" href="https://fr.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="de" href="https://de.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="es" href="https://es.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="it" href="https://it.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="pl" href="https://pl.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="nl" href="https://nl.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="pt" href="https://pt.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="hu" href="https://hu.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="cs" href="https://cs.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="ro" href="https://ro.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="sv" href="https://sv.codefixcoffee.com/blog/water-hardness-scale/" />
+  <link rel="alternate" hreflang="tr" href="https://tr.codefixcoffee.com/blog/water-hardness-scale/" />
+<link rel="stylesheet" href="/blog/blog.css">
+<link rel="alternate" type="application/rss+xml" title="CodeFix Blog" href="/blog/rss.xml">
+<meta name="google-adsense-account" content="ca-pub-9660119725457689"><script>(function(){var u="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660119725457689";var d=false;function l(){if(d)return;d=true;var s=document.createElement("script");s.async=true;s.crossOrigin="anonymous";s.src=u;document.head.appendChild(s)}["scroll","pointerdown","keydown","touchstart"].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});addEventListener("load",function(){setTimeout(l,3500)})})();</script></head>
+<body>
+<header class="site"><div class="in"><a class="brand" href="/blog/">☕ CodeFix Blog</a><span><a href="/">Volver al sitio</a></span></div></header>
+<main>
+<h1>La dureza del agua y tu máquina de café</h1>
+<p class="meta">2026-10-29</p>
+<p>En la puesta en marcha de casi cualquier superautomática llega la pregunta: configura la dureza del agua, normalmente con una tira reactiva incluida en la caja. Casi todo el mundo contesta a ojo. Ese ajuste no es un trámite: marca el compás que gobierna la frecuencia del aviso de desescalado, y si lo configuras mal la cal crece en silencio hasta empezar a escribir códigos de avería.</p>
+<h2>Qué hace realmente el ajuste de dureza</h2>
+<p>La dureza mide el calcio y el magnesio disueltos en el agua del grifo. Al calentarla hasta la temperatura de infusión, una parte se precipita como cal: sobre el termobloque o la caldera, dentro de las válvulas, a lo largo de los tubos. Cuanto más dura es el agua, más cal por cada litro bombeado.</p>
+<p>La máquina no puede medir la cal mientras se forma, así que la estima: cuenta el agua bombeada desde el último desescalado y la pondera contra el nivel de dureza que introdujiste. Si la configuras como dura, el aviso llega antes; si la configuras como blanda, la máquina espera más tiempo. El ajuste cambia la frecuencia del recordatorio, no la formación de cal: eso lo deciden tu agua y tu resistencia calefactora.</p>
+<p>El modo de fallo se ve venir a posteriori. Con el ajuste en "blanda" y un agua dura de verdad, la máquina aplaca el recordatorio semana tras semana mientras la cal envuelve la resistencia calefactora. El primer síntoma rara vez es el aviso: es un código de avería.</p>
+<h2>Qué caras pone la cal en la pantalla</h2>
+<p>La cal se anuncia con códigos que parecen cualquier cosa menos cal:</p>
+<ul>
+<li><strong>De'Longhi "Molido demasiado fino, ajusta el molinillo"</strong> suena a reproche al molinillo, pero si la máquina funcionaba bien la molienda no ha cambiado: la causa real es cal en la resistencia calefactora o en el infusor, y en la mayoría de máquinas de más de un año la solución es un desescalado completo. Detalles en la <a href="https://es.codefixcoffee.com/delonghi/magnifica-dinamica/ground-too-fine-adjust-mill/">página del aviso</a>.</li>
+<li><strong>Alarma general de De'Longhi</strong> es el infusor en nueve de cada diez casos, aunque la siguiente causa documentada es la cal sobrecargando la bomba; el mensaje y sus resets figuran en el <a href="https://es.codefixcoffee.com/delonghi/">índice de De'Longhi</a>.</li>
+<li><strong>Fallos de bomba</strong>: una De'Longhi con "circuito de agua vacío" que nunca ceba, o una Philips que solo resopla tras los intentos de cebado, apunta a una toma o una resistencia incrustada que impide a la bomba crear presión.</li>
+<li><strong>Error 6 de Jura</strong>, el de la válvula cerámica, tiene la cal como causa número uno: la cal rigidiza el disco hasta que deja de alcanzar la posición ordenada. El primer paso documentado es un desescalado completo, y es gratis; los códigos de válvula están en el <a href="https://es.codefixcoffee.com/jura/">índice de Jura</a>. En el lado térmico, la cal abundante ralentiza el calentamiento lo suficiente para disparar las comprobaciones de temperatura del termobloque en algunos firmwares.</li>
+</ul>
+<p>No todo bloqueo es cal, y conviene saber la diferencia: el <a href="https://es.codefixcoffee.com/philips-saeco/espresso-machines/error-01/">Error 01 de Philips</a> es la cara seca del mantenimiento — café molido compactado por granos aceitosos — y se limpia con el mango de una cuchara, no con descalcificador.</p>
+<h2>¿Filtro o desescalado?</h2>
+<p>Casi todas las marcas ofrecen un filtro en línea para el depósito: Philips monta de serie los <a href="https://www.philips.com">filtros AquaClean, descritos en su web oficial</a>, y Jura hace lo propio con CLARIS en <a href="https://www.jura.com">jura.com</a>. El filtro acondiciona el agua que entra en el circuito y frena la formación de cal, pero no disuelve la ya depositada sobre la resistencia: ajusta el calendario, no lo elimina. Dos reglas de las notas de servicio pesan más que la marca:</p>
+<ul>
+<li><strong>La máquina debe saber que lleva filtro.</strong> Las De'Longhi mantienen encendido el testigo de desescalado cuando el ajuste de filtro no coincide con la realidad: si la máquina cree que trabaja sin filtro, insiste como una sin filtro.</li>
+<li><strong>Un filtro nuevo debe cebarse.</strong> Un AquaClean instalado en seco, sin remojo previo, atrapa aire en el circuito y la bomba acaba aspirando aire en lugar de agua.</li>
+</ul>
+<h2>Configurarlo y mantenerlo bien</h2>
+<ol>
+<li>Mide tu agua con la tira de la caja o con cualquier tira de acuario o de kit de ferretería.</li>
+<li>Introduce el resultado en el menú: todos los modelos lo guardan cerca de los ajustes de agua o de desescalado, y el manual indica la ruta exacta.</li>
+<li>Si colocas un filtro, regístralo en el mismo menú para que el contador de desescalado y el ajuste de filtro cuenten la misma historia.</li>
+<li>Ceba los filtros nuevos como indica el fabricante — agitar, remojar en posición invertida hasta que dejen de subir burbujas — antes de instalarlos.</li>
+<li>Cuando llegue el aviso, ejecuta el ciclo desde el menú con el difusor colocado y deja que ambas fases, incluido el aclarado, terminen sin interrupciones. La máquina solo borra el recordatorio tras ver el ciclo completo.</li>
+<li>Vuelve a medir tras una mudanza o un cambio de suministro de agua, y reajusta el nivel.</li>
+</ol>
+<h3>El mapa del agua en España y Latinoamérica</h3>
+<p>La dureza cambia más entre ciudades que entre países. En España, el grifo de Madrid, Galicia o la cornisa cantábrica suele ser blando, mientras que en la costa mediterránea —Barcelona, Valencia, Murcia, Alicante— es habitual un agua dura o muy dura. En Latinoamérica el contraste es igual de grande, de aguas blandas en muchas zonas andinas a aguas duras en el norte de México. Da igual dónde vivas: mide con una tira y configura el valor real, no el que dicta la fama de tu ciudad.</p>
+<h2>La cuenta de costes</h2>
+<p>La economía del asunto no tiene discusión. Un bote de descalcificador ronda los 10 €. Lo que rompe la cal no sale barato: un conjunto de válvula cerámica Jura agarrotada va de 60 € a 120 €, y las resistencias calefactoras y termobloques incrustados cuestan más todavía antes de contar la mano de obra. Cinco minutos con una tira reactiva son el mantenimiento más barato que existe para una máquina de café.</p>
+</main>
+<footer>Guías de reparación y explicaciones de códigos de error de codefixcoffee.com.</footer>
+</body></html>
